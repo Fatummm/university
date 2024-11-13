@@ -6,8 +6,8 @@
 #include <time.h>
 #include "sudoku.c"
 
-#ifndef CONSOLE
-#define CONSOLE
+#ifndef CONSOLE_H
+#define CONSOLE_H
 
 enum Color {
     RED, BLUE, GREEN, CYAN, WHITE

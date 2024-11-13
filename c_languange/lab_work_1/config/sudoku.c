@@ -5,8 +5,8 @@
 #include <conio.h>
 
 
-#ifndef SUDOKU
-#define SUDOKU
+#ifndef SUDOKU_H
+#define SUDOKU_H
 
 
 

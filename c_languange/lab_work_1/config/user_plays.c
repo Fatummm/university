@@ -8,8 +8,8 @@
 #include "console_config.c"
 
 
-#ifndef USER
-#define USER
+#ifndef USER_H
+#define USER_H
 
 
 void clear_brackets(struct Cursor cr, short size);
@@ -17,7 +17,7 @@ void print_brackets(struct Cursor cr, short size);
 short process_input(short *** sud, short size, struct Cursor * curs, short ** dots, char c);
 
 
-void working_user(short size) {
+void working(short size) {
     short ** sd = generate_sudoku(size);
     short ** dots = encrypt_sudoku(&sd, size);
     struct Cursor curs; curs.row = 0; curs.column = 0;

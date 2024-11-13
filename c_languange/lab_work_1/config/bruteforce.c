@@ -7,10 +7,12 @@
 #include "sudoku.c"
 #include "console_config.c"
 
-#ifndef BRUTEFORCE
-#define BRUTEFORCE
+#ifndef BRUTEFORCE_H
+#define BRUTEFORCE_H
 
-void working_bruteforce(short size);
+#define TIME_DELTA 20 // в миллисекундах
+
+void working(short size);
 void sudoku_solver(short *** sud, short size, short ** dots);
 int next_element(short * i, short * j, short size);
 int prev_element(short * i, short * j, short size);
@@ -20,7 +22,7 @@ void choose_number(short *** sud, short size, struct Cursor cr, move * operation
 
 
 
-void working_bruteforce(short size) {
+void working(short size) {
     short ** sd = generate_sudoku(size);
     short ** dots = encrypt_sudoku(&sd, size);
     struct Cursor curs; curs.row = 0; curs.column = 0;
@@ -66,6 +68,7 @@ void process_dots(short *** sud, short ** dots, short size, struct Cursor * cr) 
         }
         true = oper(&i, &j, size);
         set_cursor_end(size);
+        printf(" ");
     }
 }
 
@@ -76,7 +79,7 @@ void choose_number(short *** sud, short size, struct Cursor cr, move * operation
     !check_for_good_square(*sud, size, cr.row, cr.column, ch)) {
         set_console_color(RED);
         insert_number(sud, cr, size, ch);
-        Sleep(5);
+        Sleep(TIME_DELTA);
         set_console_color(WHITE);
         if (ch == '0' + size) {
             insert_number(sud, cr, size, '.');
@@ -89,7 +92,7 @@ void choose_number(short *** sud, short size, struct Cursor cr, move * operation
     insert_number(sud, cr, size, ch);
     *operation = &next_element;
     set_console_color(WHITE);
-    Sleep(5);
+    Sleep(TIME_DELTA);
 }
 
 #endif
