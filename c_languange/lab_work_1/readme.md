@@ -45,7 +45,9 @@ gcc main.c
 
 ## Примеры работы программы
 ### Работа программы в режиме игры
+[Гифка](./data/user.gif)
 ![](./data/user_1.png) ![](./data/user_2.png)
-![](./data/user_3.png) ![](./data/user.gif)
+![](./data/user_3.png) 
 ### Работа программы в режиме брутфорса
-![](./data/bruteforce.png) ![](./data/bruteforce.gif)
+[Гифка](./data/bruteforce.gif)
+![](./data/bruteforce.png) 
