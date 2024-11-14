@@ -6,5 +6,5 @@
 - [Третья домашняя работа по C](./c_language/HomeWork_3)
 - [Четвёртая домашняя работа по C](./c_language/HomeWork_4)
 ## Лабораторные работы
-- [Судоку на C](./c_language/lab_work_1/readme.md)
+- [Судоку на C](./c_language/lab_work_1/)
 ## Работа в классе
