@@ -104,4 +104,3 @@ gcc main.c
 [Гифка](./data/bruteforce.gif)
 
 ![](./data/bruteforce.png) 
->>>>>>> 91d5147ab04dd19609b81a19d0873bbe38c54e04:c_languange/lab_work_1/readme.md
