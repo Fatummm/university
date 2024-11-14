@@ -34,7 +34,12 @@ void print_sudoku(short ** sudoku, short size) {
     for (short i = 0; i != size; ++i) {
         short sq = sqrt(size);
         if (i % sq == 0 && i != 0) {
-            for (short x = 0; x != 2 * (size + sq - 1); ++x) printf("-");
+            for (int it = 0; it != sq; ++it) {
+                for (int x = 0; x != sq; ++x) {
+                    printf("--");
+                }
+                if (it + 1 != sq) printf("-+");
+            }
             printf("\n");
         }
         for (short j = 0; j!= size; ++j) {
