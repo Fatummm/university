@@ -9,10 +9,12 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
+// структурка для задания цвета
 enum Color {
     RED, BLUE, GREEN, CYAN, WHITE
 };
 
+// структурка для курсора, а точнее - для каретки
 struct Cursor {
     short row, column;
 };
@@ -22,7 +24,8 @@ void set_cursor_end(short size);
 void set_cursor_start();
 void set_console_color(enum Color clr);
 void insert_number(short *** sud, struct Cursor cr, short size, char c);
-// RED, BLUE, GREEN, CYAN, YELLOW, WHITE
+
+// установка цвета печати в консоли
 void set_console_color(enum Color clr) {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
     switch (clr) {
@@ -44,8 +47,7 @@ void set_console_color(enum Color clr) {
     }
 }
 
-
-
+// установка курсора в конец таблицы, чтобы не мешал
 void set_cursor_end(short size) { // Ставит курсор в конец судоку (потому что заебал)
     short sq = sqrt(size);
     HANDLE handle;
@@ -56,6 +58,7 @@ void set_cursor_end(short size) { // Ставит курсор в конец с�
     SetConsoleCursorPosition ( handle , coordinates );
 }
 
+// установка курсора на начало консоли, чтобы можно было правильно печатать
 void set_cursor_start() {
     HANDLE handle;
     COORD coordinates;
@@ -65,16 +68,7 @@ void set_cursor_start() {
     SetConsoleCursorPosition(handle, coordinates);
 }
 
-void set_cursor(struct Cursor cr, short size) { // меняет положение курсора
-    HANDLE handle;
-    COORD coordinates;
-    short sq = sqrt(size);
-    handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    coordinates.X = cr.row ; // Иксы по горизонтали
-    coordinates.Y = cr.column; // Игреки по вертикали
-    SetConsoleCursorPosition ( handle , coordinates );
-}
-
+// вставка числа на определённу позицию курсора
 void insert_number(short *** sud, struct Cursor cr, short size, char c) {
     HANDLE handle;
     COORD coordinates;

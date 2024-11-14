@@ -99,19 +99,15 @@ short ** generate_sudoku(short size) {
     return sud;
 }
 
+// освобождение матриц
 void free_sudoku(short *** sud, short size, short parameter) {
     for (short i = 0; i != size; ++i) {
         free(*(*sud + i));
     }
     free(*sud);
-    // if (parameter == 0) {
-    //     printf("Sudoku Free Success!\n");
-    // }
-    // else if (parameter == 1) {
-    //     printf("Dots Free Success!\n");
-    // }
 }
 
+// Зашифровываем судоку - на место некоторых чисел ставим точки
 short ** encrypt_sudoku(short *** sud, short size) {
     short ** dots = (short**) malloc (size * sizeof(short *));
     for (short i = 0; i != size; ++i) {
@@ -127,6 +123,7 @@ short ** encrypt_sudoku(short *** sud, short size) {
     return dots;
 }
 
+// Далее три функции на проверки - подходит ли число на позицию
 
 int check_for_good_square(short ** sud, short size, short i, short j, short value) {
     short size_smol = sqrt(size);

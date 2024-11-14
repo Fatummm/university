@@ -1,11 +1,4 @@
-#include <Windows.h>
-#include <stdlib.h>
-#include <math.h>
-#include <conio.h>
-#include <stdio.h>
-#include <time.h>
-#include "sudoku.c"
-#include "console_config.c"
+#include "all_sudoku_files.h"
 
 #ifndef BRUTEFORCE_H
 #define BRUTEFORCE_H
@@ -21,7 +14,7 @@ typedef int (*move) (short *, short *, short);
 void choose_number(short *** sud, short size, struct Cursor cr, move * operation, char c);
 
 
-
+// главная функция
 void working(short size) {
     short ** sd = generate_sudoku(size);
     short ** dots = encrypt_sudoku(&sd, size);
@@ -36,6 +29,7 @@ void working(short size) {
     free_sudoku(&dots, size, 1);
 }
 
+// переходим к следующему элементу
 int next_element(short * i, short * j, short size) {
     if (*j + 1 == size && *i + 1 == size) return 0;
     else if (*j + 1 == size) {
@@ -45,6 +39,7 @@ int next_element(short * i, short * j, short size) {
     return 1;
 }
 
+// переход к предыдущему элементу
 int prev_element(short * i, short * j, short size) {
     if (*i == 0 && *j == 0) return 0;
     else if (*j == 0) {
@@ -53,7 +48,7 @@ int prev_element(short * i, short * j, short size) {
     else (*j)--;
     return 1;
 }
-
+// обработка точек
 void process_dots(short *** sud, short ** dots, short size, struct Cursor * cr) {
     move oper = &next_element;
     short i = 0, j = 0;
@@ -72,6 +67,7 @@ void process_dots(short *** sud, short ** dots, short size, struct Cursor * cr) 
     }
 }
 
+// выборка числа
 void choose_number(short *** sud, short size, struct Cursor cr, move * operation, char c) {
     char ch = c;
     while (!check_for_good_column(*sud, size, cr.column, ch) ||

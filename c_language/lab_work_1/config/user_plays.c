@@ -1,11 +1,4 @@
-#include <Windows.h>
-#include <stdlib.h>
-#include <math.h>
-#include <conio.h>
-#include <stdio.h>
-#include <time.h>
-#include "sudoku.c"
-#include "console_config.c"
+#include "all_sudoku_files.h"
 
 
 #ifndef USER_H
@@ -16,7 +9,7 @@ void clear_brackets(struct Cursor cr, short size);
 void print_brackets(struct Cursor cr, short size);
 short process_input(short *** sud, short size, struct Cursor * curs, short ** dots, char c);
 
-
+// главная функция
 void working(short size) {
     short ** sd = generate_sudoku(size);
     short ** dots = encrypt_sudoku(&sd, size);
@@ -48,7 +41,7 @@ void working(short size) {
     free_sudoku(&sd, size, 0);
 }
 
-
+// обработка введённого символа
 short process_input(short *** sud, short size, struct Cursor * curs, short ** dots, char c) {
     printf("                                                               ");
     switch (c) {
@@ -124,7 +117,7 @@ short process_input(short *** sud, short size, struct Cursor * curs, short ** do
     return 1;
 }
 
-
+// очистка квадратных скобок
 void clear_brackets(struct Cursor cr, short size) {
     HANDLE handle;
     COORD coordinates;
@@ -139,15 +132,14 @@ void clear_brackets(struct Cursor cr, short size) {
     printf(" ");
 }
 
-
-
+// установка квадратных скобок
 void print_brackets(struct Cursor cr, short size) {
     HANDLE handle;
     COORD coordinates;
     short sq = sqrt(size);
     handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    coordinates.X = 2 * (cr.column / sq + cr.column) ; // Иксы по горизонтали
-    coordinates.Y = cr.row / sq + cr.row; // игреки по вертикали
+    coordinates.X = 2 * (cr.column / sq + cr.column) ;
+    coordinates.Y = cr.row / sq + cr.row;
     SetConsoleCursorPosition ( handle , coordinates );
     set_console_color(CYAN);
     printf("[");
