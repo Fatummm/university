@@ -5,6 +5,15 @@ project(MyProject)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Проверка компилятора и добавление флагов для GCC
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    message(STATUS "Using GCC compiler")
+    add_compile_options(-Wall -Wextra -Wpedantic -O2)
+endif()
+
+# Добавляем макрос для условной компиляции
+add_definitions(-DUSE_CUSTOM_MATH)
+
 # Добавляем директории для заголовочных файлов
 include_directories(include)
 
