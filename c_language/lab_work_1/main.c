@@ -3,7 +3,7 @@
 typedef unsigned sudoku_size;
 
 
-//#define BRUTEFORCE_SOLUTION
+#define BRUTEFORCE_SOLUTION
 
 #ifndef BRUTEFORCE_SOLUTION
 #include "config/user_plays.c"
