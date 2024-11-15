@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 typedef char * (*operation) (char *, char *);
 
@@ -214,6 +215,7 @@ void Calculator() {
         
         printf("The result is: ");
         print(res);
+        getch();
 
         free(a); free(b); free(res);
         checkForExit(&flag);
