@@ -48,7 +48,7 @@ void set_console_color(enum Color clr) {
 }
 
 // установка курсора в конец таблицы, чтобы не мешал
-void set_cursor_end(short size) { // Ставит курсор в конец судоку (потому что заебал)
+void set_cursor_end(short size) { // Ставит курсор в конец судоку
     short sq = sqrt(size);
     HANDLE handle;
     COORD coordinates;
