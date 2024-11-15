@@ -1,0 +1,4 @@
+/mnt/c/Users/ADM/Documents/GitHub/university/c_language/cmake_test/build/CMakeFiles/MathFunctions.dir
+/mnt/c/Users/ADM/Documents/GitHub/university/c_language/cmake_test/build/CMakeFiles/MyApp.dir
+/mnt/c/Users/ADM/Documents/GitHub/university/c_language/cmake_test/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/ADM/Documents/GitHub/university/c_language/cmake_test/build/CMakeFiles/rebuild_cache.dir
