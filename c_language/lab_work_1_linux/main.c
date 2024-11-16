@@ -11,9 +11,9 @@
 typedef unsigned sudoku_size;
 int main() {
     srand(time(NULL));
-    system("cls");
-    printf("Enter the size of a sudoku: ");
     sudoku_size sz;
+    printf("\033[%d;%dH\033[JEnter the size of a sudoku: ", 0, 0);
     scanf("%d", &sz);
+    printf("\033[%d;%dH\033[J", 0, 0);  
     working(sz);
 }

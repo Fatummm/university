@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #ifndef CALC_2_H
-
 #define CALC_2_H
 
 typedef char * (*operation) (char *, char *);

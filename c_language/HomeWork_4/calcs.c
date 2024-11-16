@@ -1,11 +1,14 @@
 #include <stdio.h>
 #define CALC_10
 
+#define N 5
+
 #ifdef CALC_10
 #include "calc_10.h"
 #else
 #include "calc_2.h"
 #endif
+
 /*
 Задача:
 используя основные директивы препроцессора 

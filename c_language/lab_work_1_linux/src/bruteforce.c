@@ -1,17 +1,7 @@
-#include "all_sudoku_files.h"
+#include "../include/all_sudoku_files.h"
+#include "../include/bruteforce.h"
 
-#ifndef BRUTEFORCE_H
-#define BRUTEFORCE_H
 
-#define TIME_DELTA 20 // в миллисекундах
-
-void working(short size);
-void sudoku_solver(short *** sud, short size, short ** dots);
-int next_element(short * i, short * j, short size);
-int prev_element(short * i, short * j, short size);
-void process_dots(short *** sud, short ** dots, short size, struct Cursor * cr);
-typedef int (*move) (short *, short *, short);
-void choose_number(short *** sud, short size, struct Cursor cr, move * operation, char c);
 
 
 // главная функция
@@ -19,7 +9,7 @@ void working(short size) {
     short ** sd = generate_sudoku(size);
     short ** dots = encrypt_sudoku(&sd, size);
     struct Cursor curs; curs.row = 0; curs.column = 0;
-    system("cls");
+    printf("\033[0;0H\033[J");
     print_sudoku(sd, size);
     set_cursor_start();
     process_dots(&sd, dots, size, &curs);
@@ -52,8 +42,8 @@ int prev_element(short * i, short * j, short size) {
 void process_dots(short *** sud, short ** dots, short size, struct Cursor * cr) {
     move oper = &next_element;
     short i = 0, j = 0;
-    int true = 1;
-    while (true) {
+    int truee = 1;
+    while (truee) {
         set_cursor_start();
         if (*(*(dots + i) + j) == 1) {
             cr->column = j;
@@ -61,7 +51,7 @@ void process_dots(short *** sud, short ** dots, short size, struct Cursor * cr) 
             char x = (*(*(*sud + i) + j) == '.') ? '1' : *(*(*sud + i) + j);
             choose_number(sud, size, *cr, &oper, x);
         }
-        true = oper(&i, &j, size);
+        truee = oper(&i, &j, size);
         set_cursor_end(size);
         printf(" ");
     }
@@ -75,7 +65,7 @@ void choose_number(short *** sud, short size, struct Cursor cr, move * operation
     !check_for_good_square(*sud, size, cr.row, cr.column, ch)) {
         set_console_color(RED);
         insert_number(sud, cr, size, ch);
-        Sleep(TIME_DELTA);
+        usleep(TIME_DELTA);
         set_console_color(WHITE);
         if (ch == '0' + size) {
             insert_number(sud, cr, size, '.');
@@ -88,7 +78,6 @@ void choose_number(short *** sud, short size, struct Cursor cr, move * operation
     insert_number(sud, cr, size, ch);
     *operation = &next_element;
     set_console_color(WHITE);
-    Sleep(TIME_DELTA);
+    usleep(TIME_DELTA);
 }
 
-#endif

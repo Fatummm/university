@@ -1,14 +1,9 @@
 #include <stdio.h>
-#include <time.h> // Возарващает время в секундах
 #include <stdlib.h>
 #include <math.h>
-#include <conio.h>
-
 
 #ifndef SUDOKU_H
 #define SUDOKU_H
-
-
 
 void print_sudoku(short ** sudoku, short size);
 short ** generate_sudoku(short size);

@@ -1,14 +1,9 @@
-#include <Windows.h>
-#include <stdlib.h>
-#include <math.h>
-#include <conio.h>
-#include <stdio.h>
-#include <time.h>
-#include "sudoku.c"
-
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
+#include <Windows.h>
+#include "sudoku.c"
+#include <conio.h>
 // структурка для задания цвета
 enum Color {
     RED, BLUE, GREEN, CYAN, WHITE
@@ -24,6 +19,11 @@ void set_cursor_end(short size);
 void set_cursor_start();
 void set_console_color(enum Color clr);
 void insert_number(short *** sud, struct Cursor cr, short size, char c);
+char get_char_from_input();
+
+char get_char_from_input() {
+    return getch();
+}
 
 // установка цвета печати в консоли
 void set_console_color(enum Color clr) {

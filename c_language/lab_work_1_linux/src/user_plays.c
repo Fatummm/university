@@ -1,13 +1,5 @@
-#include "all_sudoku_files.h"
-
-
-#ifndef USER_H
-#define USER_H
-
-
-void clear_brackets(struct Cursor cr, short size);
-void print_brackets(struct Cursor cr, short size);
-short process_input(short *** sud, short size, struct Cursor * curs, short ** dots, char c);
+#include "../include/all_sudoku_files.h"
+#include "../include/user.h"
 
 // главная функция
 void working(short size) {
@@ -15,8 +7,8 @@ void working(short size) {
     short ** dots = encrypt_sudoku(&sd, size);
     struct Cursor curs; curs.row = 0; curs.column = 0;
     int not_escape = 1;
-    system("cls");
-    print_sudoku(sd, size);
+    printf("\033[J");
+    print_sudoku_with_cursor(sd, size, curs);
     set_console_color(CYAN);
     printf("ESCAPE"); 
     set_console_color(WHITE);
@@ -34,12 +26,40 @@ void working(short size) {
         set_cursor_start();
         print_brackets(curs, size);
         set_cursor_end(size);
-        char c = getch();
+        char c = get_char_from_input();
         not_escape = process_input(&sd, size, &curs, dots, c);
+        printf("\033[0;0H");
+        print_sudoku(sd, size);
     }
     free_sudoku(&dots, size, 1);
     free_sudoku(&sd, size, 0);
 }
+
+void print_sudoku(short ** sudoku, short size, struct Cursor cr) {
+    for (short i = 0; i != size; ++i) {
+        short sq = get_sqrt(size);
+        if (i % sq == 0 && i != 0) {
+            for (int it = 0; it != sq; ++it) {
+                for (int x = 0; x != sq; ++x) {
+                    printf("--");
+                }
+                if (it + 1 != sq) printf("-+");
+            }
+            printf("\n");
+        }
+        for (short j = 0; j!= size; ++j) {
+            short sq = get_sqrt(size);
+            if (j != 0 && cr.column == j - 1 && i == cr.row) {
+                
+            }
+            if (j % sq == 0 && j != 0) printf(" |");
+            if ('0' <= *(*(sudoku + i) + j) <= '9') printf("%2c", *(*(sudoku + i) + j));
+            else printf(".");
+        }
+        printf("\n");
+    }
+}
+
 
 // обработка введённого символа
 short process_input(short *** sud, short size, struct Cursor * curs, short ** dots, char c) {
@@ -119,34 +139,17 @@ short process_input(short *** sud, short size, struct Cursor * curs, short ** do
 
 // очистка квадратных скобок
 void clear_brackets(struct Cursor cr, short size) {
-    HANDLE handle;
-    COORD coordinates;
-    short sq = sqrt(size);
-    handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    coordinates.X = 2 * (cr.column / sq + cr.column) ; // Иксы по горизонтали
-    coordinates.Y = cr.row / sq + cr.row; // игреки по вертикали
-    SetConsoleCursorPosition ( handle , coordinates );
-    printf(" ");
-    coordinates.X += 2;
-    SetConsoleCursorPosition ( handle , coordinates );
-    printf(" ");
+    short sq = get_sqrt(size);
+    printf("\033[%d;%dH ", cr.row / sq + cr.row + 1, 2 * (cr.column / sq + cr.column) + 1);
+    printf("\033[%d;%dH ", cr.row / sq + cr.row + 1, 2 * (cr.column / sq + cr.column) + 2 + 1);
 }
 
 // установка квадратных скобок
 void print_brackets(struct Cursor cr, short size) {
-    HANDLE handle;
-    COORD coordinates;
-    short sq = sqrt(size);
-    handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    coordinates.X = 2 * (cr.column / sq + cr.column) ;
-    coordinates.Y = cr.row / sq + cr.row;
-    SetConsoleCursorPosition ( handle , coordinates );
+    short sq = get_sqrt(size);
     set_console_color(CYAN);
-    printf("[");
-    coordinates.X += 2;
-    SetConsoleCursorPosition ( handle , coordinates );
-    printf("]");
+    printf("\033[%d;%dH[", cr.row / sq + cr.row + 1, 2 * (cr.column / sq + cr.column) + 1);
+    printf("\033[%d;%dH]", cr.row / sq + cr.row + 1, 2 * (cr.column / sq + cr.column) + 2 + 1);
     set_console_color(WHITE);
 }
 
-#endif

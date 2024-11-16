@@ -8,5 +8,5 @@ int gcd(int a, int b) {
 }
 
 int main() {
-    printf("%d", gcd(14, 35));
+    printf("%d", gcd(1150, 17));
 }
