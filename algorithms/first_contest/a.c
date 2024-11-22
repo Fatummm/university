@@ -16,7 +16,6 @@ int main() {
     long long third_a = a % get_pow(2, 24) / get_pow(2, 16);
     long long fourth_a = a % get_pow(2, 32) / get_pow(2, 24);
 
-
     long long first_b = b % get_pow(2, 8);
     long long second_b = b % get_pow(2, 16) / get_pow(2, 8);
     long long third_b = b % get_pow(2, 24) / get_pow(2, 16);

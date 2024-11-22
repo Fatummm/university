@@ -1,7 +1,7 @@
 #ifndef BRUTEFORCE_H
 #define BRUTEFORCE_H
 
-#define TIME_DELTA 10000 // в миллисекундах
+#define TIME_DELTA 100000 // в миллисекундах
 
 void working(short size);
 int next_element(short * i, short * j, short size);
