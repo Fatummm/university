@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+void swap(int * a, int * b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void selection_sort(int * start, int * end) {
+    int range = end - start;
+    
+}
 
 // selection sort
 int main() {

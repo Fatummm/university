@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * merge_arrays(int * start1, int * end1, int * start2, int * end2, int * out) {
+void merge_arrays(int * start1, int * end1, int * start2, int * end2, int * out) {
     int * it1 = start1;
     int * it2 = start2;
     int * temp_out = (int*)malloc(((end1 - start1) + (end2 - start2)) * sizeof(int));
@@ -18,6 +18,7 @@ int * merge_arrays(int * start1, int * end1, int * start2, int * end2, int * out
             ind++;
         }
     }
+    
     while (it1 != end1) {
         temp_out[ind] = *it1;
         it1++;
@@ -36,14 +37,7 @@ int * merge_arrays(int * start1, int * end1, int * start2, int * end2, int * out
 }
 
 void merge_sort(int * start, int * end) {
-    if (end - start == 2) {
-        if (*start > *(start + 1)) {
-            int temp = *start;
-            *start = *(start + 1);
-            *(start + 1) = temp;
-        }
-    }
-    else if (end - start > 2) {
+    if (end - start >= 2) {
         int mid = (end - start) / 2;
         merge_sort(start, start + mid);
         merge_sort(start + mid, end);
