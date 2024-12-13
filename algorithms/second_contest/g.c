@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int partition(int * start, int * end, int mid) {
     //printf("%d\n", start[mid]);
@@ -42,10 +43,13 @@ void qqsort(int * start, int * end, int * origin_start, int * origin_end) {
 }
 
 int main() {
-    int n; scanf("%d", &n);
+    srand(time(NULL));
+    //int n; scanf("%d", &n); 
+    int n = 10;
     int * arr = (int *) malloc (n * sizeof(int));
     for (int i = 0; i != n; ++i) {
-        scanf("%d", &arr[i]);
+        //scanf("%d", &arr[i]);
+        arr[i] = rand() % 10;
     }
     printf("Initial array:\n");
     for (int i = 0; i != n; ++i) {
