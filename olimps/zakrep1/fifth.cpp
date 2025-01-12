@@ -43,20 +43,15 @@ int main() {
     ll n; cin >> n;
     vector<ll> v(n); cin >> v;
     sort(v.begin(), v.end());
-    auto iter = lower_bound(v.begin(), v.end(), v[0] * 2);
-    if (iter == v.end()) {
-        cout << n;
-        return 0;
-    }
-    ll count = 0;
-    ll index2 = (n % 2 == 0) ? n / 2 : (v[n/2] * 2 < v[v.size() - 1]) ? n / 2 : n/2 - 1, index1 = 0;
-    while (index2 != v.size()) {
-        if (v[index1] * 2 <= v[index2]) {
-            count++;
-            index1++;
-            index2++;
+    //cout << v << '\n';
+    ll counter = 0;
+    for (ll i = 0, j = 0; j != n; ) {
+        if (v[i] * 2 <= v[j]) {
+            ++counter;
+            ++i;
         }
-        else ++index2;
+        ++j;
     }
-    cout << n - count;
+    cout << n - counter << '\n';
 }
+// 1 2 4 8
