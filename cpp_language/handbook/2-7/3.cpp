@@ -17,12 +17,12 @@ std::vector<std::string> Split(const std::string& str, char delimiter) {
     return s;
 }
 
-int main() {
-    std::string s = "13-24--08-11-2014";
-    char c = '-';
-    std::vector<std::string> ans = Split(s, c);
-    for (size_t i = 0; i != ans.size(); ++i) {
-        std::cout << ans[i] << '\n';
-    }
+// int main() {
+//     std::string s = "13-24--08-11-2014";
+//     char c = '-';
+//     std::vector<std::string> ans = Split(s, c);
+//     for (size_t i = 0; i != ans.size(); ++i) {
+//         std::cout << ans[i] << '\n';
+//     }
 
-}
+// }

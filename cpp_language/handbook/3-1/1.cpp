@@ -1,15 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <array>
 
-template <typename T, template <typename, typename> typename Container>
-void Print(const Container<T, std::allocator<T>>& container, std::string delimiter) {
-    for (const auto& it = std::cbegin(container); it != std::cend(container); ++it) {
-
+template <class Container>
+void Print(const Container& container, std::string delimiter) {
+    for (auto it = container.begin(); it != container.end(); ++it) {
+        if (it != container.begin()) std::cout << delimiter;
+        std::cout << *it;
     }
 }
 
 int main() {
-    std::vector<int> data = {1, 2, 3, 4};
-    Print(data, ", ");  // 1, 2, 3, 4
+    std::array<int, 4> data1 = {1, 2, 3, 4};
+    std::vector<int, std::allocator<int>> data2 = {1, 2, 3, 4};
+    Print(data1, ", ");  // 1, 2, 3, 4
 }
