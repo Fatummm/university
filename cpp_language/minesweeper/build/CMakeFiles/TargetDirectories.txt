@@ -1,0 +1,5 @@
+/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles/TerminalConfig.dir
+/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles/MinesweeperFuncs.dir
+/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles/App.dir
+/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles/edit_cache.dir
+/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles/rebuild_cache.dir

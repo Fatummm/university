@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMinesweeperFuncs.a CMakeFiles/MinesweeperFuncs.dir/src/minesweeper_funcs.cpp.o
+/usr/bin/ranlib libMinesweeperFuncs.a

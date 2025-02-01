@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/fatum/Documents/university/cpp_language/minesweeper/build",
+  "command": "/usr/bin/g++  -I/home/fatum/Documents/university/cpp_language/minesweeper/include -g -std=gnu++17 -o CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o -c /home/fatum/Documents/university/cpp_language/minesweeper/src/terminal_config.cpp",
+  "file": "/home/fatum/Documents/university/cpp_language/minesweeper/src/terminal_config.cpp",
+  "output": "CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o"
+},
+{
+  "directory": "/home/fatum/Documents/university/cpp_language/minesweeper/build",
+  "command": "/usr/bin/g++  -I/home/fatum/Documents/university/cpp_language/minesweeper/include -g -std=gnu++17 -o CMakeFiles/MinesweeperFuncs.dir/src/minesweeper_funcs.cpp.o -c /home/fatum/Documents/university/cpp_language/minesweeper/src/minesweeper_funcs.cpp",
+  "file": "/home/fatum/Documents/university/cpp_language/minesweeper/src/minesweeper_funcs.cpp",
+  "output": "CMakeFiles/MinesweeperFuncs.dir/src/minesweeper_funcs.cpp.o"
+},
+{
+  "directory": "/home/fatum/Documents/university/cpp_language/minesweeper/build",
+  "command": "/usr/bin/g++  -I/home/fatum/Documents/university/cpp_language/minesweeper/include -g -std=gnu++17 -o CMakeFiles/App.dir/src/main.cpp.o -c /home/fatum/Documents/university/cpp_language/minesweeper/src/main.cpp",
+  "file": "/home/fatum/Documents/university/cpp_language/minesweeper/src/main.cpp",
+  "output": "CMakeFiles/App.dir/src/main.cpp.o"
+}
+]

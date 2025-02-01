@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTerminalConfig.a CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o
+/usr/bin/ranlib libTerminalConfig.a
