@@ -20,31 +20,37 @@ std::string set_cursor(unsigned int row, unsigned int column) {
 }
 
 std::string clear_terminal() {
-    return "\033[2J";
-}
-
-char getch() {
-        char buf = 0;
-        struct termios old = {0};
-        if (tcgetattr(0, &old) < 0)
-                perror("tcsetattr()");
-        old.c_lflag &= ~ICANON;
-        old.c_lflag &= ~ECHO;
-        old.c_cc[VMIN] = 1;
-        old.c_cc[VTIME] = 0;
-        if (tcsetattr(0, TCSANOW, &old) < 0)
-                perror("tcsetattr ICANON");
-        if (read(0, &buf, 1) < 0)
-                perror ("read()");
-        old.c_lflag |= ICANON;
-        old.c_lflag |= ECHO;
-        if (tcsetattr(0, TCSADRAIN, &old) < 0)
-                perror ("tcsetattr ~ICANON");
-        return (buf);
+    return "\033[1J";
 }
 
 void set_brackets(unsigned int x, unsigned int y, Color foreground) {
     std::cout << set_color(foreground);
-    if (y != 0) std::cout << set_cursor(x, y - 1) << '[';
+    if (y != 1) std::cout << set_cursor(x, y - 1) << '[';
     std::cout << set_cursor(x, y + 1) << ']' << set_color();
+}
+
+void remove_brackets(unsigned int x, unsigned int y) {
+    if (y != 0) std::cout << set_cursor(x, y - 1) << ' ';
+    std::cout << set_cursor(x, y + 1) << ' ';
+}
+
+int newgetch() { // not working: ¹ (251), num lock (-144), caps lock (-20), windows key (-91), kontext menu key (-93)
+    struct termios term;
+    tcgetattr(0, &term);
+    while(true) {
+        term.c_lflag &= ~(ICANON|ECHO); // turn off line buffering and echoing
+        tcsetattr(0, TCSANOW, &term);
+        int nbbytes;
+        ioctl(0, FIONREAD, &nbbytes); // 0 is STDIN
+        while(!nbbytes) {
+            sleep(0.01);
+            fflush(stdout);
+            ioctl(0, FIONREAD, &nbbytes); // 0 is STDIN
+        }
+        int key = (int)getchar();
+        term.c_lflag |= (ICANON|ECHO); // turn on line buffering and echoing
+        tcsetattr(0, TCSANOW, &term);
+        return key;
+        
+    }
 }

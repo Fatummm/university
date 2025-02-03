@@ -7,6 +7,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/ioctl.h \
+  /usr/include/asm-generic/ioctls.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -94,6 +96,7 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -109,6 +112,7 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
   /usr/include/features.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/ioctl.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -121,6 +125,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/asm/ioctl.h \
+  /usr/include/x86_64-linux-gnu/asm/ioctls.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -133,6 +139,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/ioctl-types.h \
+  /usr/include/x86_64-linux-gnu/bits/ioctls.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
@@ -210,6 +218,7 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/ioctl.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
@@ -221,6 +230,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/ioctl.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
@@ -316,6 +327,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
+/usr/include/x86_64-linux-gnu/bits/ioctls.h:
+
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
@@ -328,7 +341,11 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/c++/13/bits/stl_uninitialized.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -346,7 +363,9 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/c++/13/bits/invoke.h:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
@@ -360,6 +379,10 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/ctype.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/c++/13/bits/char_traits.h:
+
 /usr/include/c++/13/bits/ostream.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
@@ -371,6 +394,12 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/c++/13/type_traits:
+
+/usr/include/asm-generic/ioctl.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /usr/include/c++/13/bits/sstream.tcc:
 
@@ -408,23 +437,17 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/c++/13/bits/basic_ios.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
-
-/usr/include/c++/13/bits/nested_exception.h:
-
 /usr/include/c++/13/bits/memory_resource.h:
 
 /usr/include/wchar.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
 /usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/x86_64-linux-gnu/asm/ioctls.h:
 
 /usr/include/features.h:
 
@@ -446,11 +469,13 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/c++/13/ext/numeric_traits.h:
 
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/home/fatum/Documents/university/cpp_language/minesweeper/include/minesweeper_funcs.h:
+
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
-
-/usr/include/c++/13/bits/locale_facets.h:
 
 /usr/include/c++/13/bits/memoryfwd.h:
 
@@ -461,6 +486,10 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 /usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/locale_facets.h:
+
+/usr/include/asm-generic/ioctls.h:
 
 /home/fatum/Documents/university/cpp_language/minesweeper/src/main.cpp:
 
@@ -492,13 +521,19 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
-/usr/include/c++/13/bits/stl_vector.h:
-
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/c++/13/bits/basic_string.h:
+
 /usr/include/stdc-predef.h:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/std_abs.h:
 
@@ -515,6 +550,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/stdlib.h:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -556,6 +593,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/c++/13/ext/string_conversions.h:
 
+/usr/include/x86_64-linux-gnu/bits/ioctl-types.h:
+
 /usr/include/c++/13/ext/type_traits.h:
 
 /usr/include/c++/13/iostream:
@@ -573,6 +612,12 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 /usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/c++/13/new:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/c++/13/ostream:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
@@ -598,6 +643,8 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/linux/errno.h:
 
+/usr/include/linux/ioctl.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
 /usr/include/locale.h:
@@ -620,30 +667,10 @@ CMakeFiles/App.dir/src/main.cpp.o: /home/fatum/Documents/university/cpp_language
 
 /usr/include/wctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+/usr/include/c++/13/bits/nested_exception.h:
+
+/usr/include/x86_64-linux-gnu/asm/ioctl.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/home/fatum/Documents/university/cpp_language/minesweeper/include/minesweeper_funcs.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/c++/13/ostream:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/bits/invoke.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:

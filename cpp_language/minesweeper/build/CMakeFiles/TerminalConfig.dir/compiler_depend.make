@@ -6,6 +6,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/ioctl.h \
+  /usr/include/asm-generic/ioctls.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -89,6 +91,7 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -103,6 +106,7 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
   /usr/include/features.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/ioctl.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -115,6 +119,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/asm/ioctl.h \
+  /usr/include/x86_64-linux-gnu/asm/ioctls.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -127,6 +133,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/ioctl-types.h \
+  /usr/include/x86_64-linux-gnu/bits/ioctls.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
@@ -204,6 +212,7 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/ioctl.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
@@ -215,6 +224,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/ioctl.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
@@ -310,9 +321,19 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
-/usr/include/c++/13/bits/string_view.tcc:
+/usr/include/x86_64-linux-gnu/bits/ioctls.h:
 
-/usr/include/features.h:
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -332,49 +353,49 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
-
 /usr/include/c++/13/bits/locale_classes.tcc:
 
 /usr/include/c++/13/bits/allocator.h:
 
 /usr/include/c++/13/sstream:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+/usr/include/c++/13/bits/locale_classes.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
-/usr/include/alloca.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/13/bits/ostream.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/c++/13/bits/ios_base.h:
+/usr/include/ctype.h:
 
 /usr/include/c++/13/bits/move.h:
-
-/usr/include/c++/13/bits/basic_string.tcc:
-
-/usr/include/c++/13/bit:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/c++/13/type_traits:
 
+/usr/include/linux/close_range.h:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/c++/13/bits/requires_hosted.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/x86_64-linux-gnu/asm/ioctls.h:
+
+/usr/include/features.h:
+
 /usr/include/c++/13/backward/binders.h:
 
 /usr/include/c++/13/bits/stringfwd.h:
 
-/usr/include/linux/close_range.h:
+/usr/include/asm-generic/ioctl.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/c++/13/bits/ios_base.h:
 
 /usr/include/c++/13/bits/sstream.tcc:
 
@@ -412,17 +433,15 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/c++/13/bits/basic_ios.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
-
-/usr/include/c++/13/bits/nested_exception.h:
-
 /usr/include/c++/13/bits/memory_resource.h:
 
 /usr/include/wchar.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/usr/include/alloca.h:
 
-/usr/include/c++/13/bits/char_traits.h:
+/usr/include/c++/13/bit:
+
+/usr/include/c++/13/bits/basic_string.tcc:
 
 /home/fatum/Documents/university/cpp_language/minesweeper/include/terminal_config.h:
 
@@ -430,17 +449,31 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/c++/13/ext/numeric_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h:
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/c++/13/bits/concept_check.h:
+/usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/c++/13/ios:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
 
-/usr/include/c++/13/ios:
+/usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
+
+/usr/include/asm-generic/ioctls.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
 
@@ -458,9 +491,9 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
-/usr/include/c++/13/bits/functexcept.h:
-
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/c++/13/bits/stl_iterator.h:
 
@@ -472,21 +505,11 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/stdc-predef.h:
 
-/usr/include/c++/13/bits/locale_classes.h:
-
-/usr/include/ctype.h:
-
 /usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/postypes.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -497,6 +520,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/stdlib.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
@@ -536,6 +561,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/c++/13/ext/string_conversions.h:
 
+/usr/include/x86_64-linux-gnu/bits/ioctl-types.h:
+
 /usr/include/c++/13/ext/type_traits.h:
 
 /usr/include/c++/13/iostream:
@@ -564,9 +591,9 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/c++/13/system_error:
 
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/13/typeinfo:
 
@@ -577,6 +604,8 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/linux/errno.h:
+
+/usr/include/linux/ioctl.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -594,9 +623,17 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 
 /usr/include/unistd.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+/usr/include/x86_64-linux-gnu/bits/errno.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+/usr/include/c++/13/exception:
+
+/usr/include/wctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
+
+/usr/include/c++/13/bits/nested_exception.h:
+
+/usr/include/x86_64-linux-gnu/asm/ioctl.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
@@ -619,13 +656,3 @@ CMakeFiles/TerminalConfig.dir/src/terminal_config.cpp.o: /home/fatum/Documents/u
 /usr/include/c++/13/bits/invoke.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/c++/13/exception:
-
-/usr/include/wctype.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:

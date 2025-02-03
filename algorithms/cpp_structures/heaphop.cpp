@@ -10,7 +10,7 @@ class Heap {
 private:
     std::vector<T> data;
     size_t size = 0;
-    comparator cmp = comparator{};
+    comparator cmp;
 
 public:
     void Insert(T);
@@ -111,7 +111,6 @@ void Heap<T, comparator>::SiftDown(size_t index) {
             SiftDown(cur);
         }
     } catch (...) {}
-    
 }
 
 int main() {
