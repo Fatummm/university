@@ -13,6 +13,12 @@
 },
 {
   "directory": "/home/fatum/Documents/university/cpp_language/minesweeper/build",
+  "command": "/usr/bin/g++  -I/home/fatum/Documents/university/cpp_language/minesweeper/include -g -std=gnu++17 -o CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.o -c /home/fatum/Documents/university/cpp_language/minesweeper/src/bruteforce.cpp",
+  "file": "/home/fatum/Documents/university/cpp_language/minesweeper/src/bruteforce.cpp",
+  "output": "CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.o"
+},
+{
+  "directory": "/home/fatum/Documents/university/cpp_language/minesweeper/build",
   "command": "/usr/bin/g++  -I/home/fatum/Documents/university/cpp_language/minesweeper/include -g -std=gnu++17 -o CMakeFiles/App.dir/src/main.cpp.o -c /home/fatum/Documents/university/cpp_language/minesweeper/src/main.cpp",
   "file": "/home/fatum/Documents/university/cpp_language/minesweeper/src/main.cpp",
   "output": "CMakeFiles/App.dir/src/main.cpp.o"

@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/App.dir/src/main.cpp.o -o App  libTerminalConfig.a libMinesweeperFuncs.a 
+/usr/bin/g++ -g CMakeFiles/App.dir/src/main.cpp.o -o App  libTerminalConfig.a libMinesweeperFuncs.a libBruteforceLogic.a 

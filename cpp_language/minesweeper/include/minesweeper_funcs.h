@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include "terminal_config.h"
 // * - bomb
 // ? - miracle
 // [ ] - selected
@@ -20,19 +21,22 @@ struct Item {
     Item() {}
 };
 
-enum Difficulty {
-    EASY, NORMAL, HARD, EXTREME
-};
 
 class Field {
 private:
     std::vector<std::vector<Item>> data;
     size_t rows = 0, columns = 0;
-    void Generate(Difficulty);
+    void Generate(size_t);
+
+    size_t unmarked_bombs;
 public:
-    size_t cursorx = 0, cursory = 2;
-    bool opened = true;
-    Field(size_t, size_t, Difficulty);
+    size_t cursorx = 1, cursory = 2;
+    bool opened = false;
+    bool not_over = true;
+    std::vector<std::string> comments;
+
+
+    Field(size_t, size_t, size_t);
     size_t GetRows() const;
     size_t GetColumns() const;
 
@@ -42,6 +46,9 @@ public:
     void OpenAt(size_t i, size_t j);
     void MarkAt(size_t i, size_t j);
     
+    void Victory();
+    void Loss();
+    size_t const BombsLeft() const;
 
 };
 

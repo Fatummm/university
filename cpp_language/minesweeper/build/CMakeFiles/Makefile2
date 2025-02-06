@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/fatum/Documents/university/cpp_language/minesweeper/bui
 # The main recursive "all" target.
 all: CMakeFiles/TerminalConfig.dir/all
 all: CMakeFiles/MinesweeperFuncs.dir/all
+all: CMakeFiles/BruteforceLogic.dir/all
 all: CMakeFiles/App.dir/all
 .PHONY : all
 
@@ -75,6 +76,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/TerminalConfig.dir/clean
 clean: CMakeFiles/MinesweeperFuncs.dir/clean
+clean: CMakeFiles/BruteforceLogic.dir/clean
 clean: CMakeFiles/App.dir/clean
 .PHONY : clean
 
@@ -85,7 +87,7 @@ clean: CMakeFiles/App.dir/clean
 CMakeFiles/TerminalConfig.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalConfig.dir/build.make CMakeFiles/TerminalConfig.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalConfig.dir/build.make CMakeFiles/TerminalConfig.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=5,6 "Built target TerminalConfig"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=7,8 "Built target TerminalConfig"
 .PHONY : CMakeFiles/TerminalConfig.dir/all
 
 # Build rule for subdir invocation for target.
@@ -111,7 +113,7 @@ CMakeFiles/TerminalConfig.dir/clean:
 CMakeFiles/MinesweeperFuncs.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MinesweeperFuncs.dir/build.make CMakeFiles/MinesweeperFuncs.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MinesweeperFuncs.dir/build.make CMakeFiles/MinesweeperFuncs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=3,4 "Built target MinesweeperFuncs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=5,6 "Built target MinesweeperFuncs"
 .PHONY : CMakeFiles/MinesweeperFuncs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -131,11 +133,38 @@ CMakeFiles/MinesweeperFuncs.dir/clean:
 .PHONY : CMakeFiles/MinesweeperFuncs.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/BruteforceLogic.dir
+
+# All Build rule for target.
+CMakeFiles/BruteforceLogic.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=3,4 "Built target BruteforceLogic"
+.PHONY : CMakeFiles/BruteforceLogic.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/BruteforceLogic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/BruteforceLogic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles 0
+.PHONY : CMakeFiles/BruteforceLogic.dir/rule
+
+# Convenience name for target.
+BruteforceLogic: CMakeFiles/BruteforceLogic.dir/rule
+.PHONY : BruteforceLogic
+
+# clean rule for target.
+CMakeFiles/BruteforceLogic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/clean
+.PHONY : CMakeFiles/BruteforceLogic.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/App.dir
 
 # All Build rule for target.
-CMakeFiles/App.dir/all: CMakeFiles/MinesweeperFuncs.dir/all
 CMakeFiles/App.dir/all: CMakeFiles/TerminalConfig.dir/all
+CMakeFiles/App.dir/all: CMakeFiles/MinesweeperFuncs.dir/all
+CMakeFiles/App.dir/all: CMakeFiles/BruteforceLogic.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=1,2 "Built target App"
@@ -143,7 +172,7 @@ CMakeFiles/App.dir/all: CMakeFiles/TerminalConfig.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/App.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/App.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles 0
 .PHONY : CMakeFiles/App.dir/rule

@@ -1,7 +1,9 @@
-CMakeFiles/App.dir/src/main.cpp.o: \
- /home/fatum/Documents/university/cpp_language/minesweeper/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
- /usr/include/c++/13/bits/requires_hosted.h \
+CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.o: \
+ /home/fatum/Documents/university/cpp_language/minesweeper/src/bruteforce.cpp \
+ /usr/include/stdc-predef.h \
+ /home/fatum/Documents/university/cpp_language/minesweeper/include/bruteforce.h \
+ /home/fatum/Documents/university/cpp_language/minesweeper/include/minesweeper_funcs.h \
+ /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -149,7 +151,11 @@ CMakeFiles/App.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
  /home/fatum/Documents/university/cpp_language/minesweeper/include/terminal_config.h \
  /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
  /usr/include/x86_64-linux-gnu/sys/ioctl.h \
@@ -177,10 +183,4 @@ CMakeFiles/App.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h \
- /home/fatum/Documents/university/cpp_language/minesweeper/include/minesweeper_funcs.h \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc \
- /home/fatum/Documents/university/cpp_language/minesweeper/include/bruteforce.h
+ /usr/include/linux/close_range.h

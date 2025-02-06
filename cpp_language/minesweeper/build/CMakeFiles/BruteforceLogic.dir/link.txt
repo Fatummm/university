@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBruteforceLogic.a CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.o
+/usr/bin/ranlib libBruteforceLogic.a

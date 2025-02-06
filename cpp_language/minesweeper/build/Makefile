@@ -143,6 +143,19 @@ MinesweeperFuncs/fast:
 .PHONY : MinesweeperFuncs/fast
 
 #=============================================================================
+# Target rules for targets named BruteforceLogic
+
+# Build rule for target.
+BruteforceLogic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BruteforceLogic
+.PHONY : BruteforceLogic
+
+# fast build rule for target.
+BruteforceLogic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/build
+.PHONY : BruteforceLogic/fast
+
+#=============================================================================
 # Target rules for targets named App
 
 # Build rule for target.
@@ -154,6 +167,30 @@ App: cmake_check_build_system
 App/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/build
 .PHONY : App/fast
+
+src/bruteforce.o: src/bruteforce.cpp.o
+.PHONY : src/bruteforce.o
+
+# target to build an object file
+src/bruteforce.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.o
+.PHONY : src/bruteforce.cpp.o
+
+src/bruteforce.i: src/bruteforce.cpp.i
+.PHONY : src/bruteforce.i
+
+# target to preprocess a source file
+src/bruteforce.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.i
+.PHONY : src/bruteforce.cpp.i
+
+src/bruteforce.s: src/bruteforce.cpp.s
+.PHONY : src/bruteforce.s
+
+# target to generate assembly for a file
+src/bruteforce.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BruteforceLogic.dir/build.make CMakeFiles/BruteforceLogic.dir/src/bruteforce.cpp.s
+.PHONY : src/bruteforce.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -236,8 +273,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... App"
+	@echo "... BruteforceLogic"
 	@echo "... MinesweeperFuncs"
 	@echo "... TerminalConfig"
+	@echo "... src/bruteforce.o"
+	@echo "... src/bruteforce.i"
+	@echo "... src/bruteforce.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
