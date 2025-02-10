@@ -83,8 +83,15 @@ public:
         }
         else {
             Node<T> * success_parent = success->parent;
-            success_parent->left = nullptr;
-
+            success_parent->left = success->right;
+            if (parent != nullptr) {
+                if (parent->value > x->value) parent->left = success;
+                else parent->right = success;
+                success->parent = parent;
+            }
+            else success->parent = nullptr;
+            success->left = left;
+            success->right = right;
         }
         delete x;
         --size;
@@ -180,7 +187,7 @@ int main() {
     //std::cout << bst.Size();
     //bst.DeleteNode(bst.GetMax());
     //bst.DeleteNode(bst.GetMin());
-    bst.DeleteNode(bst.Find(5));
-    bst.PrintInOrder(); std::cout << '\n';;
+    bst.DeleteNode(bst.Find(2));
+    bst.PrintInOrder(); std::cout << '\n';
     //std::cout << bst.GetRoot()->value << std::endl;
 }
