@@ -73,15 +73,6 @@ void ApplyFunction(std::vector<std::vector<T>>& m, Func f) {
     }
 }
 
-template <typename T, typename Func>
-void NewApplyFunction(std::vector<std::vector<T>>& m, Func f) {
-    for (size_t i = 0; i != m.size(); ++i) {
-        for (size_t j = 0; j != m.at(i).size(); ++j) {
-            m.at(i).at(j) = f(m.at(i).at(j));
-        }
-    }
-}
-
 // ===== Тестирование функций =====
 void RunTests() {
     // Тест 1: Создание матрицы
@@ -114,7 +105,7 @@ int main() {
     RunTests();
 
     // Демонстрация работы
-    auto mat1 = CreateMatrix(2, 3, 2);
+    auto mat1 = CreateMatrix<int>(2, 3);
     auto mat2 = CreateMatrix(2, 3, 3);
     
     std::cout << "Матрица 1:\n";

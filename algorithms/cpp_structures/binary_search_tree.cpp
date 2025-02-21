@@ -27,7 +27,9 @@ public:
     BST() = default;
 
     ~BST() {
-        //DeleteRoot();
+        while (size != 0) {
+            DeleteNode(root);
+        }
     }
 
     void DeleteNode(Node<T> * x) {
@@ -41,6 +43,9 @@ public:
                 parent->left = nullptr;
             }
             else parent->right = nullptr;
+            --size;
+            delete x;
+            return;
         }
 
         // 2. only one child
@@ -65,6 +70,8 @@ public:
                 else parent->right = x->left;
                 x->left->parent = parent;
             }
+            delete x;
+            --size;
             return;
         }
 
@@ -112,12 +119,11 @@ public:
     }
 
     void Insert(T val) {
-        if (size == 0) {
+        ++size;
+        if (size == 1) {
             root = new Node<T>(val);
-            ++size;
             return;
         }
-        ++size;
         Node<T> * x = root;
         Node<T> * par = nullptr;
         while (x != nullptr) {
