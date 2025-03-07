@@ -32,7 +32,7 @@ public:
     bool Set(size_t i, size_t j) {  // возвращает true, если ход завершился выигрышем
         Table[i][j] = currentPlayer;
         currentPlayer = currentPlayer % 2 + 1;
-        bool wins = CheckRow(i, j) || CheckColumn(i, j); //|| CheckDiagonal1(i, j) || CheckDiagonal2(i, j);
+        bool wins = CheckRow(i, j) || CheckColumn(i, j) || CheckDiagonal1(i, j) || CheckDiagonal2(i, j);
         return wins;
     }
 
@@ -65,9 +65,21 @@ private:
         return d1 + d2 > K;
     }
 
-    bool CheckDiagonal1(size_t i, size_t j) const;
+    bool CheckDiagonal1(size_t i, size_t j) const {
+        size_t d1 = 0;
+        while (d1 <= i && d1 <= j && Table[i - d1][j - d1] == Table[i][j]) ++d1;
+        size_t d2 = 0;
+        while (d2 + i < N && d2 + j < N && Table[i + d2][j + d2] == Table[i][j]) ++d2;
+        return d1 + d2 > K;
+    }
 
-    bool CheckDiagonal2(size_t i, size_t j) const;
+    bool CheckDiagonal2(size_t i, size_t j) const {
+        size_t d1 = 0;
+        while (d1 <= i && d1 + j < N && Table[i - d1][j + d1] == Table[i][j]) ++d1;
+        size_t d2 = 0;
+        while (d2 + i < N && d2 <= j && Table[i + d2][j - d2] == Table[i][j]) ++d2;
+        return d1 + d2 > K;
+    }
 };
 
 std::ostream& operator << (std::ostream& out, TicTacToe& field) {
@@ -90,6 +102,9 @@ std::ostream& operator << (std::ostream& out, TicTacToe& field) {
 }
 
 
+//#include <iostream>
+
+//#include "tic_tac_toe.correct.h"  // это ваше решение
 
 int main() {
     size_t n, m;
