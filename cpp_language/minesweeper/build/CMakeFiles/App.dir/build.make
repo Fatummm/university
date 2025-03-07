@@ -92,6 +92,9 @@ App_EXTERNAL_OBJECTS =
 
 App: CMakeFiles/App.dir/src/main.cpp.o
 App: CMakeFiles/App.dir/build.make
+App: libTerminalConfig.a
+App: libMinesweeperFuncs.a
+App: libBruteforceLogic.a
 App: CMakeFiles/App.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fatum/Documents/university/cpp_language/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable App"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/App.dir/link.txt --verbose=$(VERBOSE)
