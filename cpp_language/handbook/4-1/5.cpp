@@ -15,9 +15,9 @@ private:
 
 public:
     TicTacToe(size_t n, size_t k): N(n), K(k), currentPlayer(1) {
-        Table.reserve(N);
+        Table.resize(N);
         for (size_t i = 0; i != N; ++i) {
-            Table[i].reserve(N);
+            Table[i].resize(N);
         }
     }
 
