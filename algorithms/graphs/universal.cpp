@@ -104,6 +104,16 @@ public:
         adjacency_matrix[v][u] = w;
         ++edges_number;
     }
+
+    template <typename Iter>
+    static WeightedGraph make_graph(Iter begin, Iter end) {
+        WeightedGraph tmp;
+        while (begin != end) {
+            tmp.AddEdge(begin[0], begin[1], begin[2]);
+            ++begin;
+        }
+        return tmp;
+    }
 };
 
 template <typename Container, typename output = std::ostream>
@@ -116,6 +126,7 @@ void print(const Container& c, output& out = std::cout) {
 
 int main() {
     std::deque<std::pair<int, int>> dq = {{0, 1}, {0, 2}, {1, 2}, {2, 3}, {2, 4}, {4, 5}};
+    std::deque<std::deque<int>> dq_new = {{0, 1, 2}, {0, 2, 3}, {1, 2, 2}, {2, 3, 4}, {2, 4, 7}, {4, 5, 1}};
     DirectedGraph g = DirectedGraph::make_graph(dq.begin(), dq.end());
     //Graph g = Graph::make_graph(dq.begin(), dq.end());
     print(g.GetNeighbours(2));
