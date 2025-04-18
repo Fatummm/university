@@ -27,7 +27,7 @@ public:
         return adjacency_list.size();
     }
 
-    const uint64_t GetNodesNumber() const {
+    uint64_t GetNodesNumber() const {
         return adjacency_list.size();
     }
 
@@ -40,12 +40,11 @@ public:
         ++edges_number;
     }
 
-    template <typename Iter>
-    static Graph make_graph(Iter begin, Iter end) {
+    template <typename Container>
+    static Graph make_graph(Container& c) {
         Graph tmp;
-        while (begin != end) {
-            tmp.AddEdge(begin->first, begin->second);
-            ++begin;
+        for (auto& elem: c) {
+            tmp.AddEdge(elem.first, elem.second);
         }
         return tmp;
     }
@@ -60,7 +59,7 @@ public:
 };
 
 class DirectedGraph: public Graph {
-private:
+protected:
 
 public:
     DirectedGraph(): Graph() {}
@@ -96,21 +95,64 @@ public:
         }
     }
 
-    void AddEdge(int64_t u, int64_t v, double w) {
-        if (static_cast<uint64_t>(u) >= adjacency_list.size() || static_cast<uint64_t>(v) >= adjacency_list.size()) 
-        adjacency_list.resize(static_cast<uint64_t>(std::max(u, v) + 1));
+    void AddEdge(int64_t u, int64_t v, int64_t w) {
+        if (static_cast<uint64_t>(u) >= adjacency_list.size() || static_cast<uint64_t>(v) >= adjacency_list.size()) {
+            uint64_t sz = static_cast<uint64_t>(std::max(u, v) + 1);
+            adjacency_list.resize(sz);
+            adjacency_matrix.resize(sz); for (uint64_t i = 0; i != sz; ++i) adjacency_matrix[i].resize(sz);
+        }
+        
         adjacency_list[u].push_back(v);
+        adjacency_list[v].push_back(u);
+        
         adjacency_matrix[u][v] = w;
         adjacency_matrix[v][u] = w;
         ++edges_number;
     }
+    struct Edge {
+        int64_t from;
+        int64_t to;
+        int64_t weight;        
+    };
 
-    template <typename Iter>
-    static WeightedGraph make_graph(Iter begin, Iter end) {
+    template <typename Container>
+    static WeightedGraph make_graph(Container& c) {
         WeightedGraph tmp;
-        while (begin != end) {
-            tmp.AddEdge(begin[0], begin[1], begin[2]);
-            ++begin;
+        for (Edge& elem: c) {
+            tmp.AddEdge(elem.from, elem.to, elem.weight);
+        }
+        return tmp;
+    }
+
+    int64_t GetWeight(int64_t u, int64_t v) const {
+        return adjacency_matrix[u][v];
+    }
+};
+
+class WeightedDirectedGraph: public WeightedGraph {
+private:
+
+public:
+    WeightedDirectedGraph() {}
+    WeightedDirectedGraph(int64_t n): WeightedGraph(n) {}
+
+    void AddEdge(int64_t u, int64_t v, int64_t w) {
+        if (static_cast<uint64_t>(u) >= adjacency_list.size() || static_cast<uint64_t>(v) >= adjacency_list.size()) {
+            uint64_t sz = static_cast<uint64_t>(std::max(u, v) + 1);
+            adjacency_list.resize(sz);
+            adjacency_matrix.resize(sz); for (uint64_t i = 0; i != sz; ++i) adjacency_matrix[i].resize(sz);
+        }
+        
+        adjacency_list[u].push_back(v);
+        adjacency_matrix[u][v] = w;
+        ++edges_number;
+    }
+
+    template <typename Container>
+    static WeightedDirectedGraph make_graph(Container& c) {
+        WeightedDirectedGraph tmp;
+        for (auto& elem: c) {
+            tmp.AddEdge(elem.from, elem.to, elem.weight);
         }
         return tmp;
     }
@@ -126,10 +168,12 @@ void print(const Container& c, output& out = std::cout) {
 
 int main() {
     std::deque<std::pair<int, int>> dq = {{0, 1}, {0, 2}, {1, 2}, {2, 3}, {2, 4}, {4, 5}};
-    std::deque<std::deque<int>> dq_new = {{0, 1, 2}, {0, 2, 3}, {1, 2, 2}, {2, 3, 4}, {2, 4, 7}, {4, 5, 1}};
-    DirectedGraph g = DirectedGraph::make_graph(dq.begin(), dq.end());
+    std::deque<WeightedGraph::Edge> dq_new = {{0, 1, 2}, {0, 2, 3}, {1, 2, 2}, {2, 3, 4}, {2, 4, 7}, {4, 5, 1}};
+    //DirectedGraph g = DirectedGraph::make_graph(dq.begin(), dq.end());
     //Graph g = Graph::make_graph(dq.begin(), dq.end());
+    //WeightedGraph g = WeightedGraph::make_graph(dq_new);
+    WeightedDirectedGraph g = WeightedDirectedGraph::make_graph(dq_new);
     print(g.GetNeighbours(2));
-    std::cout << '\n' << g.GetEdgesNumber();
+    std::cout << '\n' << g.GetWeight(2, 3);
     std::cout << "\nSuccess!\n";
 }

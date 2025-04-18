@@ -3,40 +3,26 @@
 #include <map>
 #include <list>
 #include <vector>
+#include "universal.hpp"
 
-void dfs(std::map<int, std::vector<int>>& al, std::vector<bool>& visited, int u) {
+void dfs(fatum::Graph& G, std::vector<bool>& visited, int64_t u) {
     std::cout << u << ' ';
     visited[u] = true;
-    for (size_t i = 0; i != al[u].size(); ++i) {
-        if (!visited[al[u][i]]) dfs(al, visited, al[u][i]);
+    for (auto elem: G.GetNeighbours(u)) {
+        if (!visited[elem]) dfs(G, visited, elem);
     }
 }
 
 int main() {
-    std::map<int, std::vector<int>> adjacency_list;
-    adjacency_list.insert({0, {1, 2}});
-    adjacency_list.insert({1, {0}});
-    adjacency_list.insert({2, {0, 3, 14}});
-    adjacency_list.insert({3, {2, 8, 9}});
-    adjacency_list.insert({4, {6}});
-    adjacency_list.insert({5, {8}});
-    adjacency_list.insert({6, {4, 7}});
-    adjacency_list.insert({7, {6}});
-    adjacency_list.insert({8, {3, 5}});
-    adjacency_list.insert({9, {3}});
-    adjacency_list.insert({10, {11, 12}});
-    adjacency_list.insert({11, {10, 12, 13}});
-    adjacency_list.insert({12, {10, 11, 13}});
-    adjacency_list.insert({13, {11, 12}});
-    adjacency_list.insert({14, {2, 15}});
-    adjacency_list.insert({15, {14}});
-    std::vector<bool> visited(16, false);
-    int count = 0;
-    for (size_t i = 0; i != 16; ++i) {
-        if (!visited[i]) {
-            count++;
-            std::cout << "\nComponenta svyaznosti nomer " << count << ": ";
-            dfs(adjacency_list, visited, i);
-        }
-    }
+    std::vector<std::pair<int64_t, int64_t>> edges = {
+        {0, 1}, {0, 7}, {1, 2}, {1, 7}, {2, 3}, {2, 5}, {2, 8}, {3, 4}, {3, 5},
+        {4, 5}, {5, 6}, {6, 7}, {6, 8}, {7, 8}
+    };
+    std::vector<fatum::WeightedGraph::Edge> weighted_edges = {
+        {0, 1, 4}, {0, 7, 8}, {1, 2, 8}, {1, 7, 11}, {2, 3, 7}, {2, 5, 4}, {2, 8, 2}, {3, 4, 9}, {3, 5, 14},
+        {4, 5, 10}, {5, 6, 2}, {6, 7, 1}, {6, 8, 6}, {7, 8, 7}
+    };
+    fatum::Graph g = fatum::Graph::make_graph(edges);
+    std::vector<bool> visited(g.GetNodesNumber(), false);
+    dfs(g, visited, 0);
 }
