@@ -164,7 +164,7 @@ namespace fatum {
     };
         
     template <typename Container, typename output = std::ostream>
-    void print_conatainer(const Container& c, output& out = std::cout) {
+    void print_container(const Container& c, output& out = std::cout) {
         for (size_t i = 0; i != c.size(); ++i) {
             if (i != 0) out << ' ';
             out << c[i];
