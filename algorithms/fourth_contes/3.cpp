@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <set>
 #include <cmath>
+#include <sstream>
 
 #define ll long long
 #define ull unsigned long long
@@ -35,7 +36,12 @@ int main() {
         ll x, y; std::cin >> x >> y;
         coords.insert({city, {x, y}});
         getline(std::cin, others);
-        std::vector<std::string> cities = split(others, ' ');
+        std::istringstream ss(others);
+        std::string other_city;
+        std::vector<std::string> cities;
+        while (ss >> other_city) {
+            cities.push_back(other_city);
+        }
         all_cities.push_back(city);
         neighbours.insert({city, cities});
     }
@@ -78,8 +84,10 @@ int main() {
     }
     std::cout << "Path:\n";
     while (!ans.empty()) {
-        std::cout << ans.back() << ' ';
+        std::cout << ans.back();
         ans.pop_back();
+        if (ans.size() != 0) std::cout << ' ';
     }
+    std::cout << '\n';
 
 }

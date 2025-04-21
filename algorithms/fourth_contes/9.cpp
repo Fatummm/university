@@ -58,7 +58,7 @@ int main() {
             for (int dy = -1; dy != 2; ++dy) {
                 if (!(dx + i/columns >= 0 && dx + i/columns < rows && dy + (i%columns) >= 0 && dy + (i % columns) < columns) 
                 || !(abs(dx) + abs(dy) == 1) || origin[dx + i/columns][dy + (i%columns)] == '#') continue;
-                std::cout << i + dx*rows + dy << ' ';
+                std::cout << i + dx*columns + dy << ' ';
                 ++cnt;
             }
         }
