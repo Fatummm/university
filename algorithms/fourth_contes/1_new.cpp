@@ -17,6 +17,23 @@ int multiplie(int a, int b, int mod) {
     }
     return res;
 }
+long long multiple_superpuper_method(long long a, long long b, long long md)
+{
+    return ((a % md) * (b % md)) % md;
+}
+long long fast_pow(long long a, long long n, long long md) {
+    long long result = 1;
+    while (n > 0) {
+        if (n % 2 == 1) {
+            result = multiple_superpuper_method(result, a, md);
+          result %= md;
+        }
+        n /= 2;
+        a = multiple_superpuper_method(a, a, md);
+      a %= md;
+    }
+    return result;
+}
 
 int powpow(int a, int b, int mod) {
     long long res = 1;
@@ -68,7 +85,7 @@ signed main() {
         msg += int(s[i]);
         std::cout << int(s[i]) << ' ';
     }
-    uint64_t encrypted = powpow(msg, e, n);
+    uint64_t encrypted = fast_pow(msg, e, n);
     std::vector<int> v;
     std::cout << "\nEncrypted bytes: ";
     while (encrypted != 0) {
