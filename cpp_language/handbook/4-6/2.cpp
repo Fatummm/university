@@ -42,7 +42,11 @@ public:
         if (byParticipant.contains(login)) {
             throw std::invalid_argument("Participant is already registered");
         }
-        
+        Ptr tmp = std::make_shared<ParticipantResults>(login, team);
+        allResults.push_back(tmp);
+        byTeam[team].push_back(tmp);
+        byParticipant[login] = tmp;
+        return tmp;
     }
 
     Ptr GetParticipantResults(const std::string& login) {

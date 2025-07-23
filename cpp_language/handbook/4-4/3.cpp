@@ -35,9 +35,6 @@ public:
 };
 
 int main() {
-    JsonSerializer js;
-    js.BeginArray();
-    js.BeginArray();
-    js.EndArray();
-    js.EndArray();
+    Serializer* s = new JsonSerializer();
+    delete s;
 }
