@@ -36,13 +36,22 @@ void MakeFast() {
 }
 
 void Solve() {
-  int x, y, z; cin >> x >> y >> z;
-  int res = x & y & z;
-  if ((x & y) == (y & z) && (y & z) == (x & z)) {
-    cout << "YES\n";
-  } else {
-    cout << "NO\n";
+  int n, m; cin >> n >> m;
+  int score = 0;
+  int cur_wal = 0;
+  int cur_minute = 0;
+  rep(i, n) {
+    int minute, wall;
+    cin >> minute >> wall;
+    int dif = minute - cur_minute;
+    if ((dif % 2 == 0 && wall != cur_wall) || (diff % 2 == 1 && wall == cur_wall)) {
+      score += dif - 1;
+    } else {
+      score += dif;
+    }
+    cur_minute = minute;
   }
+  int dif = 
 }
 
 signed main() {
