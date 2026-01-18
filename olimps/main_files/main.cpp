@@ -3,6 +3,7 @@
 #define int ll
 #define rep(i, n) for(int i = 0; i < n; ++i)
 #define all(a) a.begin(), a.end()
+#define rall(a) a.rbegin(), a.rend()
 #define vi vector<int>
 #define vvi vector<vector<int>>
 #define pii pair<int, int>
@@ -36,22 +37,23 @@ void MakeFast() {
 }
 
 void Solve() {
-  int n, m; cin >> n >> m;
-  int score = 0;
-  int cur_wal = 0;
-  int cur_minute = 0;
+  int n; cin >> n;
+  map<int, int> m;
   rep(i, n) {
-    int minute, wall;
-    cin >> minute >> wall;
-    int dif = minute - cur_minute;
-    if ((dif % 2 == 0 && wall != cur_wall) || (diff % 2 == 1 && wall == cur_wall)) {
-      score += dif - 1;
-    } else {
-      score += dif;
-    }
-    cur_minute = minute;
+    int tmp; cin >> tmp;
+    m[tmp]++;
   }
-  int dif = 
+  int cnt = 0;
+  int last = 0;
+  for (auto p: m) {
+    cnt += p.second / p.first;
+    last += p.second % p.first;
+    if (last >= p.first) {
+      cnt += last / p.first;
+      last %= p.first;
+    }
+  }
+  cout << cnt << '\n';
 }
 
 signed main() {
@@ -62,3 +64,4 @@ signed main() {
     Solve();
   }
 }
+
