@@ -36,33 +36,35 @@ void MakeFast() {
   std::cout.tie(0);
 }
 
-int erat[1'000'000] = {0,};
-
-void init() {
-  for (int i = 1; i < 1'000'000; ++i) {
-    for (int k = i; k < 1'000'000; k += i) {
-      erat[k] += 1;
+void Solve() {
+  int n, q; cin >> n >> q;
+  vector<int> a(n);
+  vector<int> b(n);
+  rep(i, n) {
+    cin >> a[i];
+  }
+  rep(i, n) {
+    cin >> b[i];
+    if (b[i] > a[i]) {
+      a[i] = b[i];
     }
   }
-}
-
-
-void Solve() {
-  int x, y; cin >> x >> y;
-  int dif = abs(x - y);
-  cout << max(dif, static_cast<int>(1)) << '\n';
-  rep(i, x) {
-    cout << 1 << ' ';
+  for (int i = n - 1; i != 0; --i) {
+    if (a[i-1] < a[i]) {
+      a[i-1] = a[i];
+    }
   }
-
-  rep(i, y) {
-    cout << -1 << ' ';
+  vector<int> pref(n + 1, 0);
+  rep(i, n) {
+    pref[i + 1] = pref[i] + a[i];
   }
-  cout << '\n';
+  rep(i, q) {
+    int l, r; cin >> l >> r;
+    cout << pref[r] - pref[l-1] << ' ';
+  } cout << '\n';
 }
 
 signed main() {
-  init();
   MakeFast();
   int t = 1;
   cin >> t;

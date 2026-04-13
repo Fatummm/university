@@ -36,33 +36,38 @@ void MakeFast() {
   std::cout.tie(0);
 }
 
-int erat[1'000'000] = {0,};
-
-void init() {
-  for (int i = 1; i < 1'000'000; ++i) {
-    for (int k = i; k < 1'000'000; k += i) {
-      erat[k] += 1;
-    }
-  }
-}
-
-
 void Solve() {
-  int x, y; cin >> x >> y;
-  int dif = abs(x - y);
-  cout << max(dif, static_cast<int>(1)) << '\n';
-  rep(i, x) {
-    cout << 1 << ' ';
+  int n; cin >> n;
+  vector<int> a(n);
+  vector<int> b(n);
+  rep(i, n) {
+    cin >> a[i];
   }
-
-  rep(i, y) {
-    cout << -1 << ' ';
+  rep(i, n) {
+    cin >> b[i];
   }
-  cout << '\n';
+  vector<int> pref_b(n + 1, 0);
+  rep(i, n) {
+    pref_b[i + 1] = pref_b[i] + b[i];
+  }
+  // pref[i] - сколько мечей нужно для прохождения i уровней включительно
+  sort(all(a));
+  int mx = 0;
+  //print(pref_b);
+  rep(i, n) {
+    int swords = n - i;
+    //cout << "swords: " << swords << '\n';
+    auto it = lower_bound(all(pref_b), swords);
+    if (it != pref_b.end() && it != pref_b.begin() && *it > swords) --it;
+    int levels = it - pref_b.begin();
+    //cout << "difficulty: " << a[i] << '\n' << "levels: " << levels << '\n';
+    mx = max(mx, a[i] * levels);
+    while (i != n - 1 && a[i] == a[i+1]) ++i;
+  }
+  cout << mx << '\n';
 }
 
 signed main() {
-  init();
   MakeFast();
   int t = 1;
   cin >> t;
